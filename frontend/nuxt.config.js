@@ -2,11 +2,6 @@ export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
-  server: {
-    port: 3001,
-    host: '0.0.0.0',
-  },
-
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'frontend',
@@ -39,7 +34,24 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxt/http',
+    '@nuxtjs/axios',
   ],
+
+  http: {
+    baseUrl: 'http://localhost:3000',
+    browserBaseUrl: 'http://localhost:3000',
+  },
+
+  axios: {
+    baseUrl: 'http://localhost:3000',
+    browserBaseUrl: 'http://localhost:3000',
+  },
+
+  server: {
+    port: 3001,
+    host: '0.0.0.0',
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
