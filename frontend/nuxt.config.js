@@ -30,12 +30,14 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/moment',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxt/http',
     '@nuxtjs/axios',
+    'bootstrap-vue/nuxt',
   ],
 
   http: {
@@ -55,5 +57,8 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    babel: {
+      compact: false,
+    }
   }
 }
