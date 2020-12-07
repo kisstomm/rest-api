@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Felhasználók</h1>
+    <nuxt-link :to="{ name: 'add'}">
+      Új felhasználó
+    </nuxt-link>
     <div>
       <b-table sstriped hover :items="users" :fields="fields">
         <template #cell(isAdmin)="data">
@@ -73,8 +76,8 @@ export default Vue.extend({
     }
   },
   methods: {
-    async deleteUser(id) {
-      this.user = await this.$axios.$delete(`http://localhost:3000/user/${id}`);
+    async deleteUser(id:number) {
+      await this.$axios.$delete(`http://localhost:3000/user/${id}`);
       this.$fetch();
     }
   }
