@@ -80,8 +80,9 @@ export default Vue.extend({
   },
   methods: {
     async onSubmit() {
-      await this.$axios.$put(`http://localhost:3000/user/${this.$route.params.id}`, this.user);
-      this.$router.push('/');
+      if (this.validateName && this.validateBirthYear) {
+        await this.$axios.$put(`http://localhost:3000/user/${this.$route.params.id}`, this.user);
+      }
     },
     async onReset() {
       this.$router.push('/');

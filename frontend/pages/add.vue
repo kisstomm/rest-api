@@ -62,7 +62,6 @@ export default Vue.extend({
     async onSubmit() {
       if (this.validateName && this.validateBirthYear) {
         await this.$axios.$post('http://localhost:3000/user', this.user);
-        this.$router.push('/');
       }
     },
     async onReset() {
