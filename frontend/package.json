@@ -6,7 +6,9 @@
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate"
+    "generate": "nuxt-ts generate",
+    "cypress:gui": "./node_modules/.bin/cypress open",
+    "cypress:ci": "./node_modules/.bin/cypress run --spec \"cypress/integration/user_spec.js\""
   },
   "dependencies": {
     "@nuxt/http": "^0.6.1",
