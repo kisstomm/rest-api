@@ -1,24 +1,26 @@
 <template>
   <div>
     <h1>Felhasználók</h1>
-    <nuxt-link :to="{ name: 'add'}">
+    <nuxt-link id='link-add-user' :to="{ name: 'add'}">
       Új felhasználó
     </nuxt-link>
     <div>
       <b-table sstriped hover :items="users" :fields="fields">
         <template #cell(isAdmin)="data">
           <b-form-checkbox
-            id="checkbox-is-admin"
+            :id="`checkbox-is-admin-${data.index}`"
             v-model="data.item.isAdmin"
             disabled
+            :value-field="data.item.isAdmin ? 'admin' : 'not_admin'"
+
           />
         </template>
         <template #cell(actions)="data">
-          <nuxt-link :to="{ name: 'edit-id', params: { id: data.item.id }}">
+          <nuxt-link :id="`link-edit-${data.index}`" :to="{ name: 'edit-id', params: { id: data.item.id }}">
             Szerkersztés
           </nuxt-link>
 
-          <b-button size="sm" @click="deleteUser(data.item.id)" class="ml-2">
+          <b-button :id="`button-delete-${data.index}`" size="sm" @click="deleteUser(data.item.id)" class="ml-2">
             Törlés
           </b-button>
         </template>

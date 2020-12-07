@@ -51,8 +51,8 @@
       </b-form-group>
 
 
-      <b-button type="submit" variant="primary">Mentés</b-button>
-      <b-button type="reset" variant="danger">Mégse</b-button>
+      <b-button id="button-submit" type="submit" variant="primary">Mentés</b-button>
+      <b-button id="button-reset" type="reset" variant="danger">Mégse</b-button>
     </b-form>
     </div>
   </div>

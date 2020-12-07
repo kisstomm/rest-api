@@ -10,7 +10,7 @@
           v-model="user.name"
           placeholder='Teszt Elek'
         />
-        <b-form-invalid-feedback :state="validateName">
+        <b-form-invalid-feedback id="invalid-feedback-name" :state="validateName">
           Mező kitöltése kötelező
         </b-form-invalid-feedback>
       </b-form-group>
@@ -21,7 +21,7 @@
           v-model="user.birthYear"
           placeholder=1999
         />
-        <b-form-invalid-feedback :state="validateBirthYear">
+        <b-form-invalid-feedback id="invalid-feedback-birth-year" :state="validateBirthYear">
           Érvénytelen érték (Megengedett érték: {{ currentDate.getFullYear()-100 }} - {{ currentDate.getFullYear() }})
         </b-form-invalid-feedback>
       </b-form-group>
@@ -33,8 +33,8 @@
          />
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Mentés</b-button>
-      <b-button type="reset" variant="danger">Mégse</b-button>
+      <b-button id="button-submit" type="submit" variant="primary">Mentés</b-button>
+      <b-button id="button-reset" type="reset" variant="danger">Mégse</b-button>
     </b-form>
     </div>
   </div>
