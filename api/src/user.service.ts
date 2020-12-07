@@ -22,7 +22,7 @@ export class UserService {
     let user:UserEntity = await this.findById(id);
     user.name = userData.name;
     user.birthYear = userData.birthYear;
-    user.isAdmin = user.isAdmin;
+    user.isAdmin = userData.isAdmin;
 
     return getConnection()
       .createEntityManager()
