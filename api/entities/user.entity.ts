@@ -13,7 +13,7 @@ export default class UserEntity extends BaseEntity {
   @Column({ name: 'birth_year', nullable: false })
   birthYear: number;
 
-  @Column({ name: 'is_admin', nullable: false })
+  @Column({ name: 'is_admin', nullable: false, default: false })
   isAdmin: boolean;
 
   @CreateDateColumn({ name: 'created_at' })
